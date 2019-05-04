@@ -17,9 +17,10 @@ $ [sudo] pip install gist-generator
 ```
 
 #### How it works
-+   skip if `.git` exists
 +   description as folder name
++   `gitignore` supported
 +   clones `.git` after gist creation
++   skip if `.git` exists
 
 #### Config
 ```bash
