@@ -28,6 +28,7 @@ files="$(
     cp -R "$PWD"/ "$tmp_repo" || exit
     cd "$tmp_repo"; git init 1> /dev/null || exit
     _files="$(git ls-files --others --exclude-standard | cut -d/ -f1 | uniq)" || exit
+    _files="$(echo "$_files" | while IFS= read f; do [ -s "$f" ] && echo "$f"; done)"
     i=0
     count="$(echo "$_files" | wc -l | tr -d ' ')"
     [[ -n "$_files" ]] && while IFS= read f; do
