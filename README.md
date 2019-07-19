@@ -17,7 +17,7 @@ $ [sudo] pip install gist-generator
 ```
 
 #### How it works
-+   description as folder name
++   description as folder name. or `description.txt` if exist
 +   `gitignore` supported
 +   clones `.git` after gist creation
 +   skip if `.git` exists
@@ -28,9 +28,9 @@ $ export GITHUB_TOKEN="<GITHUB_TOKEN>"
 ```
 
 #### Scripts usage
-```bash
-usage: gist-generator [-p|--private] path
-```
+command|`usage`
+-|-
+`gist-generator` |`usage: gist-generator [-p|--private] path`
 
 #### Examples
 ```bash

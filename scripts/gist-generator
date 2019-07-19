@@ -16,6 +16,7 @@ public=true
 
 cd "$1" || exit
 description="$(echo ${PWD##*/} | sed 's/"/\\"/g')" || exit
+[ -s description.txt ] && { description="$(cat description.txt)" || exit; }
 [ -e .git ] && echo "SKIP ($PWD): .git EXISTS" 1>&2 && exit
 
 [[ -z "$GITHUB_TOKEN" ]] && echo "ERROR: \$GITHUB_TOKEN required" 1>&2 && exit 1
